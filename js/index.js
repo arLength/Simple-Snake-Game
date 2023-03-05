@@ -44,10 +44,10 @@ function gameEngine(){
     if(isCollide(snakeArr)){
         gameOverSound.play();
         musicSound.pause();
+        musicSound.currentTime = 0;
         inputDir =  {x: 0, y: 0}; 
         alert("Game Over. Press any key to play again!");
         snakeArr = [{x: 13, y: 15}];
-        musicSound.play();
         score = 0; 
     }
 
@@ -74,6 +74,7 @@ function gameEngine(){
 
     snakeArr[0].x += inputDir.x;
     snakeArr[0].y += inputDir.y;
+    musicSound.play();
 
     // Part 2: Display the snake and Food
     // Display the snake
