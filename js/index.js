@@ -74,7 +74,7 @@ function gameEngine(){
 
     snakeArr[0].x += inputDir.x;
     snakeArr[0].y += inputDir.y;
-    musicSound.play();
+    //musicSound.play();
 
     // Part 2: Display the snake and Food
     // Display the snake
@@ -104,7 +104,6 @@ function gameEngine(){
 
 
 // Main logic starts here
-musicSound.play();
 let hiscore = localStorage.getItem("hiscore");
 if(hiscore === null){
     hiscoreval = 0;
@@ -119,6 +118,7 @@ window.requestAnimationFrame(main);
 window.addEventListener('keypress', e =>{
     inputDir = {x: 0, y: 1} // Start the game
     moveSound.play();
+    musicSound.play();
     switch (e.key) {
         case "w":                  // USE 'keydown or keyup' FUNCTION FOR ARROW KEYS
             console.log("w");    // I USED 'keypress' FUNCTION FOR CHARACTERS KEYS
